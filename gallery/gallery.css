@@ -90,3 +90,12 @@
 .gallery-list-section .gallery-grid{
   margin-top:0;
 }
+
+
+/* ===== V5.3.4 REMOVE DUPLICATE SELECTED PROJECT ===== */
+.gallery-card.map-selected{
+  border-color:var(--accent) !important;
+  box-shadow:0 0 0 3px var(--accent-soft);
+  transform:translateY(-2px);
+  transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}

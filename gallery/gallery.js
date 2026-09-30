@@ -33,12 +33,19 @@
     return p.page ? '<a class="project-link" href="'+p.page+'">View project →</a>' : '<span class="project-link project-link-muted">Active project</span>';
   }
   function selected(p){
-    var e=document.getElementById('gallery-selected');
-    e.innerHTML='<span class="eyebrow">'+p.publicLocation+'</span>'+visual(p,'selected-img')+
-      '<span class="project-number">'+p.projectNumber+'</span><h2>'+p.title+'</h2>'+
-      '<div class="selected-tags">'+pills(p)+'</div>'+
-      (p.notes?'<p class="project-notes">'+p.notes+'</p>':'')+
-      projectAction(p);
+    var card=document.getElementById(p.id);
+    if(!card)return;
+
+    document.querySelectorAll('.gallery-card.map-selected').forEach(function(c){
+      c.classList.remove('map-selected');
+    });
+
+    card.classList.add('map-selected');
+    card.scrollIntoView({behavior:'smooth',block:'center'});
+
+    window.setTimeout(function(){
+      card.classList.remove('map-selected');
+    },2200);
   }
   function cards(){
     var e=document.getElementById('gallery-grid'),f=projects.filter(matches);
@@ -99,5 +106,4 @@
     }).addTo(map);
   }
   apply();
-  var first=projects.filter(matches)[0];if(first)selected(first);
 })();
