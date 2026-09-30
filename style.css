@@ -829,3 +829,28 @@ a, button, [role='button'], input, textarea, select {
   .development-options-info{display:block;padding:22px}
   .development-options-info h3{font-size:inherit}
 }
+
+
+/* ===== MOBILE CONVERSATION TARGET ===== */
+@media (max-width: 720px) {
+  #inquiry .field.conversation-target {
+    position: relative;
+    border-radius: 10px;
+    animation: conversationTargetPulse 1.6s ease-out 1;
+  }
+
+  #inquiry .field.conversation-target label {
+    color: var(--accent);
+  }
+
+  #inquiry .field.conversation-target select {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+}
+
+@keyframes conversationTargetPulse {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}

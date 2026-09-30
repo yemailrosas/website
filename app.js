@@ -273,6 +273,61 @@
     lastScroll = y;
   }, { passive: true });
 
+
+  // ===== Mobile "Start a conversation" behavior =====
+  // On phones/tablets, send the visitor directly to the first actionable
+  // form field ("I am a") instead of stopping at the Contact section title.
+  function mobileConversationTarget(e) {
+    if (!window.matchMedia('(max-width: 720px)').matches) return;
+
+    var link = e.currentTarget;
+    if (!link || link.getAttribute('href') !== '#contact') return;
+
+    e.preventDefault();
+
+    var role = document.getElementById('role');
+    var roleField = role ? role.closest('.field') : null;
+    if (!role || !roleField) return;
+
+    // Close mobile navigation if it is open.
+    var menu = document.getElementById('menu');
+    var navLinks = document.getElementById('nav-links');
+    if (menu && navLinks) {
+      menu.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('open');
+    }
+
+    // Position the first form control clearly below the sticky header.
+    var header = document.getElementById('header');
+    var headerHeight = header ? header.offsetHeight : 60;
+    var y = roleField.getBoundingClientRect().top + window.pageYOffset - headerHeight - 18;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
+
+    // Brief visual cue so the user immediately knows where to begin.
+    roleField.classList.remove('conversation-target');
+    window.setTimeout(function () {
+      roleField.classList.add('conversation-target');
+      role.focus({ preventScroll: true });
+    }, 450);
+
+    window.setTimeout(function () {
+      roleField.classList.remove('conversation-target');
+    }, 2200);
+
+    if (history.replaceState) {
+      history.replaceState(null, '', '#contact');
+    }
+  }
+
+  document.querySelectorAll('a[href="#contact"]').forEach(function (link) {
+    var text = (link.textContent || '').toLowerCase();
+    if (text.indexOf('start a conversation') !== -1 ||
+        text.indexOf('discuss an opportunity') !== -1) {
+      link.addEventListener('click', mobileConversationTarget);
+    }
+  });
+
   // ===== Contact form =====
   var form = document.getElementById('inquiry');
   if (form) {
