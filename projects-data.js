@@ -1,0 +1,50 @@
+window.YR_PROJECTS = [
+  {
+    id: "new-construction",
+    title: "Residential New Construction Delivery",
+    city: "Southern California",
+    publicLocation: "Southern California",
+    lat: null,
+    lng: null,
+    phases: ["Design & Permitting", "Development", "Construction"],
+    projectType: "Single-Family Residence",
+    scope: ["New Construction"],
+    image: "../assets/project-images/new-construction-intro.png",
+    homeImage: "assets/project-images/new-construction-intro.png",
+    page: "../projects/residential-construction/",
+    featured: true,
+    illustrative: true
+  },
+  {
+    id: "addition-remodel",
+    title: "Residential Addition, Remodel & Development Options",
+    city: "Los Angeles, CA",
+    publicLocation: "Los Angeles, CA",
+    lat: 34.0522,
+    lng: -118.2437,
+    phases: ["Design & Permitting", "Development"],
+    projectType: "Single-Family Residence",
+    scope: ["Addition", "Remodel"],
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&auto=format&fit=crop&q=80",
+    homeImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&auto=format&fit=crop&q=80",
+    page: "../projects/residential-addition/",
+    featured: true,
+    illustrative: true
+  },
+  {
+    id: "adu-garage",
+    title: "ADU / Garage Conversion Potential",
+    city: "Long Beach, CA",
+    publicLocation: "Long Beach, CA",
+    lat: 33.7701,
+    lng: -118.1937,
+    phases: ["Design & Permitting", "Development"],
+    projectType: "ADU",
+    scope: ["Conversion"],
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80",
+    homeImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80",
+    page: "../projects/garage-conversion-adu/",
+    featured: true,
+    illustrative: true
+  }
+];
