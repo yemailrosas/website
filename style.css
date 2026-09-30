@@ -302,14 +302,14 @@ a, button, [role='button'], input, textarea, select {
 
 .hero-tag {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 14px; border-radius: var(--radius-full);
+  padding: 8px 16px; border-radius: var(--radius-full);
   background: var(--accent-soft); border: 1px solid var(--accent-glow);
-  font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+  font-size: clamp(14px, 1.15vw, 17px); font-weight: 650; letter-spacing: 0.07em;
   color: var(--accent); text-transform: uppercase;
   margin-bottom: 28px;
 }
 .hero-tag .dot {
-  width: 6px; height: 6px; border-radius: 50%;
+  width: 7px; height: 7px; border-radius: 50%;
   background: var(--accent);
   animation: blink 2s ease-in-out infinite;
 }
@@ -811,3 +811,21 @@ a, button, [role='button'], input, textarea, select {
 
 /* ===== V5 SELECTED WORK + HOME MAP ===== */
 .section-head-row{display:flex;justify-content:space-between;gap:28px;align-items:flex-end}.showreel-all{white-space:nowrap;margin-bottom:8px}.showreel-grid .project-visual img{opacity:.82}.section-map{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.location-grid{max-width:var(--content);margin:0 auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}.location-copy .btn{margin-top:24px}.home-map-wrap{position:relative;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--bg-elevated)}#home-project-map{width:100%;height:430px}.map-privacy{position:absolute;left:12px;bottom:12px;z-index:500;padding:7px 10px;border-radius:var(--radius-sm);background:rgba(10,10,11,.84);border:1px solid var(--border-strong);font-size:10px;color:#d8e3ea}.map-legend-home{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px;font-size:12px;color:var(--text-muted)}.map-legend-home span{display:inline-flex;align-items:center;gap:7px}.phase-dot{width:10px;height:10px;border-radius:50%;display:inline-block;border:2px solid var(--bg-card);box-shadow:0 0 0 1px var(--border-strong)}.phase-design{background:#9eb8ca}.phase-development{background:#5f819c}.phase-construction{background:#27455d}.map-marker{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:white;border:3px solid rgba(255,255,255,.95);box-shadow:0 3px 12px rgba(0,0,0,.25);font-family:var(--font-display);font-size:11px;font-weight:700}.map-marker.design{background:#9eb8ca}.map-marker.development{background:#5f819c}.map-marker.construction{background:#27455d}.leaflet-container{font-family:var(--font-body);background:#dfe8ee}.leaflet-tile-pane{filter:grayscale(1) sepia(.08) hue-rotate(165deg) saturate(.5) brightness(.96)}.leaflet-control-attribution{font-size:8px!important}.contact-inquiry-note{font-size:13px;color:var(--text-faint);margin:0 0 22px}@media(max-width:900px){.location-grid{grid-template-columns:1fr}.section-head-row{align-items:flex-start}.showreel-all{margin-top:8px}}@media(max-width:640px){.section-head-row{display:block}.showreel-all{display:inline-block;margin:14px 0 0}#home-project-map{height:360px}.location-grid{gap:26px}}
+
+
+/* ===== V5.2 CORE PROJECT TYPES ===== */
+.development-options-card{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);margin:0 0 18px;min-height:310px}
+.development-options-card .project-visual{min-height:310px;height:100%}
+.development-options-card .project-visual img{width:100%;height:100%;object-fit:cover}
+.development-options-info{display:flex;flex-direction:column;justify-content:center;padding:34px 36px}
+.development-options-info h3{font-size:clamp(24px,2.5vw,34px)}
+.development-options-info p{max-width:520px}
+.development-options-info .project-link{margin-top:8px}
+@media(max-width:720px){
+  .hero-tag{font-size:13px;padding:7px 12px;letter-spacing:.055em}
+  .development-options-card{display:block;min-height:0;margin-bottom:18px}
+  .development-options-card .project-visual{min-height:0;height:auto}
+  .development-options-card .project-visual img{aspect-ratio:16/10;height:auto}
+  .development-options-info{display:block;padding:22px}
+  .development-options-info h3{font-size:inherit}
+}
