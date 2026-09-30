@@ -125,4 +125,35 @@ window.YR_PROJECTS = [
     featured: false,
     illustrative: false
   }
+  {
+  id: "2026-314",
+  projectNumber: "2026.314",
+  title: "Kitchen & Bathroom Remodel, Add New Bathroom and Bedroom",
+  city: "Montebello, CA",
+  publicLocation: "Montebello, CA",
+
+  lat: 34.0079,
+  lng: -118.1075,
+
+  status: "Active",
+
+  phases: [
+    "Design & Permitting",
+    "Construction"
+  ],
+
+  projectType: "Single-Family Residence",
+
+  scope: [
+    "Remodel"
+  ],
+
+  notes: "Like-for-like kitchen and bathroom remodels, plus a new bathroom and bedroom within the existing walls.",
+
+  image: null,
+  page: null,
+
+  featured: false,
+  illustrative: false
+}
 ];
